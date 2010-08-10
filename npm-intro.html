@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta name="description" content="npm node package manager wtf is a npm? de facto package manager for node A way around dependency hell Beta, but pretty useful anyway Colorful, and lowercase One letter off from “nom” installing npm curl http://npmjs.org/install.sh | sh (but first install node, of course) These Slides npm install npm-intro-slideshow npm start npm-intro-slideshow What, no sudo? don’t do package management with sudo! Packages can run arbitrary scripts! A PM with sudo is a chainsaw haircut!  Don’t ever do this! (SHAME on you, dpkg!) instead: sudo chown -R $USER /usr/local Under the Hood About 4kloc, but can be shrunk down a lot (much of that predates Streams) &quot;root&quot; config – folder where npm puts stuff The .npm folder in there has everything Sets up symbolic links and shims The filesystem is the database npm isn’t A module loader Something you include in your program Good for any other CommonJS platform A religion Complicated to use Only for publishing code npm SUPER isn’t rubygems cpan pear tusk &quot;easy_install&quot; dpkg, apt-get, yum, rpm, homebrew, etc npm help Lots of stuff, including a 12 second intro. Use help.  A lot. It’s incredibly helpful. When it isn’t, post a bug. (It tells you how.) `man npm` also works on most systems. As of npm@0.1.24, also put --help, -h, or -? on any command to get help on it. What’s out there? npm ls – shows installed/remote/latest/etc. Currently: 167 projects, in 481 sparkling versions, from 110 node users! wtf is a package? A folder with a package.json, or a tarball An opaque blob of functionality with a clearly defined entry point. Internally, structure it however you want.  npm cares not for convention. wtf is a json? npm help json A package.json file describes your package. It’s json.  WAAAAYYY easier than ant’s xml. name, version, main.  That’s all you need. It’s not hard and it’s extra helpful.  Do it. Otherwise, code how you like. installing stuff npm install &lt;pkg&gt; npm help install Can install name, name@version, tarball url/path, package root path `npm install` with no args installs $PWD updating stuff npm update npm help update Installs the new versions, sets up dependent packages to point to new thing, if ok. Brand new in npm@0.1.23! Sparkly and shiny!  Probably a little broken! Development npm link npm help link Give it a folder, and it’ll do it up link-style. Changes are reflected immediately. If no args given, then it links $PWD Installs dependencies and devDependencies Development npm is a development tool. It’s not &quot;for&quot; publishing.  That’s just something it can do. It’s &quot;for&quot; playing. If it's not fun, something is broken. Dependency Hell Most systems have a single root namespace Including something means that is the only version that exists for everyone. That sucks, and is dumb. Escaping DH npm can install multiple versions of the same thing. Because require.paths is mutable, it can manage who gets which versions of what. That means, you get what you depend on, even if someone else depends on another version of the same thing. Paths The same techniques for escaping DH also can ensure that relative links work. require(&quot;dep&quot;) for dependencies. require(&quot;./path/to/stuff&quot;) for your modules. Even cli scripts! If it works in your code folder, it’ll work when npm installs it.* *Unless it doesn’t. Acquiring Fame npm adduser npm help adduser Enter username, password, email. Creates an account on the registry.  Also use it to set up existing account. If it gets screwed up, just ask for help. Acquiring Fame npm publish npm help publish Give it a folder, tarball, or tarball url.   If no arg supplied, it does $PWD Packs up your kit and sends to the registry. Now it can be installed, updated, etc. The Registry http://registry.npmjs.org/ code: http://github.com/isaacs/js-registry pretty: http://npm.mape.me/ A simple couchapp Will be node-powered in the future. configuration npm config npm help config Config options read from 5 places:          cli, env, userconfig, globalconfig, defaults Configs are a prototype chain, because I think that's hot, and npm exists primarily for my amusement. configuration C: npm config ls --foo bar E: npm_config_foo=bar npm config ls U: echo &quot;foo = bar&quot; &gt; ~/.npmrc G: echo &quot;foo = bar&quot; &gt; /usr/local/etc/npmrc D: edit lib/utils/default-config.js and send me a pull request. configuration cli or env can set &quot;userconfig&quot; file cli, env, or user can set &quot;globalconfig&quot; file Yes, you can configure npm to behave however you want it to. other goodies! npm test – Run a test script npm start/stop/restart – Run stop/start scripts npm unpublish – Remove a thing from the registry.  Please don't do this much.  It's a bit rude. The Future! http://github.com/isaacs/npm/issues npm remote install &lt;pkg&gt; Hook into OS start/stop scripts Bundle pkg+deps into self-contained thing A smarter registry that understands dependencies, handles failed uploads, displays package docs/src/stats, etc. my secret... Writing a package manager looks hard. It isn't hard.  It's actually easy and fun. You should try it. They'll let you talk at meetups. thanks."/>
+    <title></title>
+    <script type="text/javascript" language="javascript">
+//      <![CDATA[
+            var images = new Array (29);
+            images[0] = "npm-intro.html_files/npm-intro.001.png";
+            images[1] = "npm-intro.html_files/npm-intro.002.png";
+            images[2] = "npm-intro.html_files/npm-intro.003.png";
+            images[3] = "npm-intro.html_files/npm-intro.004.png";
+            images[4] = "npm-intro.html_files/npm-intro.005.png";
+            images[5] = "npm-intro.html_files/npm-intro.006.png";
+            images[6] = "npm-intro.html_files/npm-intro.007.png";
+            images[7] = "npm-intro.html_files/npm-intro.008.png";
+            images[8] = "npm-intro.html_files/npm-intro.009.png";
+            images[9] = "npm-intro.html_files/npm-intro.010.png";
+            images[10] = "npm-intro.html_files/npm-intro.011.png";
+            images[11] = "npm-intro.html_files/npm-intro.012.png";
+            images[12] = "npm-intro.html_files/npm-intro.013.png";
+            images[13] = "npm-intro.html_files/npm-intro.014.png";
+            images[14] = "npm-intro.html_files/npm-intro.015.png";
+            images[15] = "npm-intro.html_files/npm-intro.016.png";
+            images[16] = "npm-intro.html_files/npm-intro.017.png";
+            images[17] = "npm-intro.html_files/npm-intro.018.png";
+            images[18] = "npm-intro.html_files/npm-intro.019.png";
+            images[19] = "npm-intro.html_files/npm-intro.020.png";
+            images[20] = "npm-intro.html_files/npm-intro.021.png";
+            images[21] = "npm-intro.html_files/npm-intro.022.png";
+            images[22] = "npm-intro.html_files/npm-intro.023.png";
+            images[23] = "npm-intro.html_files/npm-intro.024.png";
+            images[24] = "npm-intro.html_files/npm-intro.025.png";
+            images[25] = "npm-intro.html_files/npm-intro.026.png";
+            images[26] = "npm-intro.html_files/npm-intro.027.png";
+            images[27] = "npm-intro.html_files/npm-intro.028.png";
+            images[28] = "npm-intro.html_files/npm-intro.029.png";
+            var index = 0;
+            function WindowLoaded(evt)
+            {
+                document.body.onselectstart = function () { return false; };
+            }
+            function Step(i)
+            {
+                GoTo(index + i)
+            }
+            function GoTo(newIndex)
+            {
+                if(newIndex >= 0 && newIndex < images.length)
+                {
+                    index = newIndex;
+                    document.Slideshow.src = images[index];
+                }
+            }
+//      ]]>
+    </script>
+</head>
+<body bgcolor="black" onload='WindowLoaded(event);'>
+    <p align="center">
+        <br/>
+        <br/>
+        <img name="Slideshow" alt="" src="npm-intro.html_files/npm-intro.001.png" onclick="Step(1)"/>
+        <br/>
+        <br/>
+        <input type="image" src="npm-intro.html_files/home.png" onclick="GoTo(0)"/>
+        &nbsp;&nbsp;&nbsp;
+        <input type="image" src="npm-intro.html_files/prev.png" onclick="Step(-1)"/>
+        <input type="image" src="npm-intro.html_files/next.png" onclick="Step(1)"/>
+    </p>
+</body>
+</html>

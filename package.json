@@ -1,0 +1,5 @@
+{ "name" : "npm-intro-slides"
+, "version" : "0.0.4"
+, "dependencies" : { "node-static" : "*" }
+, "scripts" : { "start" : "node server.js" }
+}
